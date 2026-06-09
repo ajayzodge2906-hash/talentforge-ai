@@ -289,7 +289,15 @@ function Dashboard() {
                     </div>
 
                     <h3 className="font-extrabold text-white text-base line-clamp-1">{interview.role}</h3>
-                    <div className="flex gap-3 text-[11px] text-gray-400 mt-1 font-semibold">
+                    <div className="flex flex-wrap gap-2 text-[11px] text-gray-400 mt-1 font-semibold items-center">
+                      <span className={`px-2 py-0.5 rounded text-[9px] uppercase tracking-wider font-extrabold border ${
+                        interview.roundType === 'hr' 
+                          ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' 
+                          : 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                      }`}>
+                        {interview.roundType === 'hr' ? 'HR Round' : 'Technical'}
+                      </span>
+                      <span>•</span>
                       <span>Exp: {interview.experience} {interview.experience === 1 ? 'yr' : 'yrs'}</span>
                       <span>•</span>
                       <span>Questions: {interview.questionCount || 5}</span>
