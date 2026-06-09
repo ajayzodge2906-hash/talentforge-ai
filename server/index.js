@@ -13,12 +13,16 @@ import adminRouter from './routes/admin.route.js';
 
 const app = express();
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", process.env.FRONTEND_URL].filter(Boolean),
     credentials: true
 }));
 
 app.use(express.json());
 app.use(cookieParser());
+
+app.get("/", (req, res) => {
+    res.json({ message: "TalentForge AI API Server is online and running!" });
+});
 
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
