@@ -361,7 +361,7 @@ function Dashboard() {
                   <div>
                     <h3 className="font-extrabold text-xl text-white">Generating Questions...</h3>
                     <p className="text-gray-400 text-xs mt-1.5 max-w-xs mx-auto leading-relaxed">
-                      Google Gemini AI is scanning requirements and building targeted coding, behavioral, and HR questions.
+                      TalentForge AI is scanning requirements and building targeted coding, behavioral, and HR questions.
                     </p>
                   </div>
                 </div>

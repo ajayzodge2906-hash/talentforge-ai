@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'motion/react'
 import axios from 'axios'
 import { ServerUrl } from '../App'
-import { BsShieldLock, BsPeople, BsCoin, BsPlayCircle, BsCashCoin, BsPencilSquare, BsArrowRepeat } from 'react-icons/bs'
+import { BsShieldLock, BsPeople, BsCoin, BsPlayCircle, BsCashCoin, BsPencilSquare, BsArrowRepeat, BsArrowLeft } from 'react-icons/bs'
 
 function AdminDashboard() {
   const { userData } = useSelector((state) => state.user)
@@ -120,6 +120,16 @@ function AdminDashboard() {
       <Navbar />
 
       <div className="w-full max-w-6xl mx-auto px-4 mt-8 flex-1 flex flex-col gap-6">
+        {/* Navigation / Actions Header */}
+        <div className="flex justify-between items-center w-full">
+          <button
+            onClick={() => navigate('/dashboard')}
+            className="flex items-center gap-2 text-gray-400 hover:text-white text-sm font-semibold transition cursor-pointer"
+          >
+            <BsArrowLeft size={16} />
+            <span>Back to Dashboard</span>
+          </button>
+        </div>
         {/* Banner */}
         <div className="bg-gray-900/40 rounded-3xl p-6 border border-gray-800/80 shadow-lg flex items-center justify-between gap-6 backdrop-blur-md">
           <div>

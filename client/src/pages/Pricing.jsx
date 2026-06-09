@@ -38,7 +38,7 @@ function Pricing() {
       price: "₹100",
       features: [
         "15 Full AI Mock Interviews",
-        "Gemini AI questions generation",
+        "TalentForge AI questions generation",
         "Detailed performance grading",
         "Speech-to-Text transcription"
       ],
@@ -51,7 +51,7 @@ function Pricing() {
       price: "₹500",
       features: [
         "65 Full AI Mock Interviews",
-        "Gemini AI questions generation",
+        "TalentForge AI questions generation",
         "Detailed performance grading",
         "Speech-to-Text transcription",
         "Optimal code response suggestions"
@@ -65,7 +65,7 @@ function Pricing() {
       price: "₹500",
       features: [
         "65 Full AI Mock Interviews",
-        "Gemini AI questions generation",
+        "TalentForge AI questions generation",
         "Detailed performance grading",
         "Speech-to-Text transcription",
         "Optimal code response suggestions",
@@ -173,7 +173,17 @@ function Pricing() {
     <div className="min-h-screen bg-[#0b0f19] flex flex-col font-sans select-none pb-16 text-gray-150 relative">
       <Navbar />
 
-      <div className="w-full max-w-6xl mx-auto px-4 mt-12 flex-1 flex flex-col items-center">
+      <div className="w-full max-w-6xl mx-auto px-4 mt-8 flex-1 flex flex-col items-center gap-6">
+        {/* Navigation / Actions Header */}
+        <div className="flex justify-between items-center w-full">
+          <button
+            onClick={() => navigate('/dashboard')}
+            className="flex items-center gap-2 text-gray-400 hover:text-white text-sm font-semibold transition cursor-pointer"
+          >
+            <BsArrowLeft size={16} />
+            <span>Back to Dashboard</span>
+          </button>
+        </div>
         {/* Header Title */}
         <div className="text-center max-w-2xl mb-12">
           <h1 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight">

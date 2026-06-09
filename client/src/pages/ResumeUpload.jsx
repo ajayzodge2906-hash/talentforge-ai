@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'motion/react'
 import axios from 'axios'
 import { ServerUrl } from '../App'
-import { BsCloudUpload, BsFileEarmarkPdf, BsFileEarmarkText, BsCheck2Circle, BsLightbulb, BsArrowRight, BsTrash } from 'react-icons/bs'
+import { BsCloudUpload, BsFileEarmarkPdf, BsFileEarmarkText, BsCheck2Circle, BsLightbulb, BsArrowRight, BsTrash, BsArrowLeft } from 'react-icons/bs'
 import { FaGraduationCap, FaBriefcase, FaCode } from 'react-icons/fa'
 
 function ResumeUpload() {
@@ -157,6 +157,16 @@ function ResumeUpload() {
       <Navbar />
 
       <div className="w-full max-w-6xl mx-auto px-4 mt-8 flex-1 flex flex-col gap-6">
+        {/* Navigation / Actions Header */}
+        <div className="flex justify-between items-center w-full">
+          <button
+            onClick={() => navigate('/dashboard')}
+            className="flex items-center gap-2 text-gray-400 hover:text-white text-sm font-semibold transition cursor-pointer"
+          >
+            <BsArrowLeft size={16} />
+            <span>Back to Dashboard</span>
+          </button>
+        </div>
         {/* Banner */}
         <div className="bg-gray-900/40 rounded-3xl p-6 md:p-8 border border-gray-800/80 shadow-lg backdrop-blur-md">
           <span className="text-[10px] bg-emerald-500/10 text-emerald-400 font-extrabold uppercase tracking-widest px-2.5 py-0.5 rounded-md border border-emerald-500/20">
@@ -468,7 +478,7 @@ function ResumeUpload() {
                         <div>
                           <h4 className="font-bold text-white mb-1">Unlock AI Mock Prep</h4>
                           <p className="text-xs text-gray-400 leading-relaxed mb-4">
-                            TalentForge uses your parsed resume profile contexts to direct Gemini to customize interview question prompts!
+                            TalentForge uses your parsed resume profile contexts to customize interview question prompts!
                           </p>
                           <button
                             onClick={() => navigate('/dashboard')}

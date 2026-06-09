@@ -659,7 +659,7 @@ function InterviewSession() {
               <div>
                 <h3 className="font-extrabold text-xl text-white">Evaluating Your Answers...</h3>
                 <p className="text-gray-400 text-xs mt-2 leading-relaxed max-w-xs mx-auto">
-                  Gemini is evaluating your correctness, communication quality, and confidence indicators. This may take up to 15 seconds.
+                  TalentForge AI is evaluating your correctness, communication quality, and confidence indicators. This may take up to 15 seconds.
                 </p>
               </div>
             </motion.div>

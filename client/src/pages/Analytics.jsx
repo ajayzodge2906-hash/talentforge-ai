@@ -22,7 +22,7 @@ import {
   Bar,
   Cell
 } from 'recharts'
-import { BsBarChartLine, BsGraphUp, BsArrowRight } from 'react-icons/bs'
+import { BsBarChartLine, BsGraphUp, BsArrowRight, BsArrowLeft } from 'react-icons/bs'
 
 function Analytics() {
   const { userData } = useSelector((state) => state.user)
@@ -125,6 +125,16 @@ function Analytics() {
       <Navbar />
 
       <div className="w-full max-w-5xl mx-auto px-4 mt-8 flex-1 flex flex-col gap-6">
+        {/* Navigation / Actions Header */}
+        <div className="flex justify-between items-center w-full">
+          <button
+            onClick={() => navigate('/dashboard')}
+            className="flex items-center gap-2 text-gray-400 hover:text-white text-sm font-semibold transition cursor-pointer"
+          >
+            <BsArrowLeft size={16} />
+            <span>Back to Dashboard</span>
+          </button>
+        </div>
         {/* Banner */}
         <div className="bg-gray-900/40 rounded-3xl p-6 md:p-8 border border-gray-800/80 shadow-lg backdrop-blur-md">
           <span className="text-[10px] bg-emerald-500/10 text-emerald-400 font-extrabold uppercase tracking-widest px-2.5 py-0.5 rounded-md border border-emerald-500/20">
