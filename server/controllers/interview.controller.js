@@ -22,7 +22,7 @@ const parseJSONResponse = (text) => {
 
 export const createInterview = async (req, res) => {
     try {
-        const { role, description, experience, questionCount } = req.body;
+        const { role, description, experience, questionCount, roundType } = req.body;
         const userId = req.userId;
 
         if (!role || !description || experience === undefined) {
@@ -51,7 +51,18 @@ export const createInterview = async (req, res) => {
         const genAI = new GoogleGenerativeAI(apiKey);
         const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
 
-        const prompt = `
+        const prompt = roundType === 'hr' ? `
+Generate exactly ${count} HR, behavioral, situational, and cultural fit interview questions for a candidate applying for: "${role}".
+Candidate's Years of Experience: ${experience} years.
+Target Company / Culture Context: "${description}".
+
+Return the questions STRICTLY in JSON format as a JSON array of objects. Do not wrap in Markdown formatting, do not write any explaining text. 
+Each object in the array MUST have exactly these two fields:
+- "questionId": a number starting from 1 to ${count}
+- "questionText": the question itself as a string
+
+Ensure the questions are challenging, suitable for the experience level, and cover teamwork, problem resolution, culture fit, career aspiration, and situational scenarios.
+` : `
 Generate exactly ${count} technical, project-based, behavioral, and HR interview questions for a candidate applying for: "${role}".
 Candidate's Years of Experience: ${experience} years.
 Job Description / Required Skills: "${description}".
@@ -87,6 +98,7 @@ Ensure the questions are challenging, suitable for the experience level, and cov
             role,
             description,
             experience,
+            roundType: roundType || 'technical',
             questionCount: count,
             questions: questionsList,
             answers: [],
@@ -158,10 +170,11 @@ export const submitInterview = async (req, res) => {
         });
 
         const prompt = `
-You are an expert interviewer and technical hiring manager.
+You are an expert interviewer and hiring manager.
 Role applied for: "${interview.role}"
 Years of experience: ${interview.experience}
-Job Description: "${interview.description}"
+Job Description / Context: "${interview.description}"
+${interview.roundType === 'hr' ? 'This is an HR & Behavioral interview round. Focus your evaluation and grading feedback on communication fluency, behavioral correctness, emotional intelligence, teamwork alignment, and situational responses.' : 'This is a Technical & Coding interview round. Focus on technical correctness, language concepts, system details, coding practices, and problem solving.'}
 
 Evaluate the candidate's answers to the following questions:
 ${JSON.stringify(evaluationPayload, null, 2)}

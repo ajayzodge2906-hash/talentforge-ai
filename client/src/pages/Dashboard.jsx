@@ -21,7 +21,8 @@ function Dashboard() {
     role: '',
     description: '',
     experience: '',
-    questionCount: '5'
+    questionCount: '5',
+    roundType: ''
   })
   const [generating, setGenerating] = useState(false)
   const [errorMsg, setErrorMsg] = useState('')
@@ -79,7 +80,8 @@ function Dashboard() {
           role: formData.role,
           description: formData.description,
           experience: Number(formData.experience),
-          questionCount: Number(formData.questionCount)
+          questionCount: Number(formData.questionCount),
+          roundType: formData.roundType
         },
         { withCredentials: true }
       )
@@ -345,6 +347,7 @@ function Dashboard() {
                   onClick={() => {
                     setShowModal(false)
                     setErrorMsg('')
+                    setFormData({ role: '', description: '', experience: '', questionCount: '5', roundType: '' })
                   }}
                   className="absolute right-6 top-6 text-gray-400 hover:text-white font-bold text-lg cursor-pointer"
                 >
@@ -365,13 +368,73 @@ function Dashboard() {
                     </p>
                   </div>
                 </div>
+              ) : !formData.roundType ? (
+                <div className="flex flex-col gap-5">
+                  <div>
+                    <h3 className="font-extrabold text-xl text-white">Choose Interview Round</h3>
+                    <p className="text-xs text-gray-400 mt-0.5">
+                      Select the type of mock interview you want to practice.
+                    </p>
+                  </div>
+
+                  {errorMsg && (
+                    <div className="bg-red-500/10 text-red-400 text-xs border border-red-500/20 rounded-xl p-3 font-semibold">
+                      {errorMsg}
+                    </div>
+                  )}
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                    <button
+                      type="button"
+                      onClick={() => setFormData({ ...formData, roundType: 'technical' })}
+                      className="flex flex-col items-center gap-3 p-5 rounded-2xl border border-gray-800 bg-gray-950/45 hover:bg-emerald-500/5 hover:border-emerald-500/35 transition cursor-pointer text-center group text-gray-150"
+                    >
+                      <div className="bg-emerald-500/10 text-emerald-400 p-3.5 rounded-xl border border-emerald-500/20 group-hover:scale-105 transition-transform duration-200">
+                        <BsCpu size={24} />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-white text-sm">Technical Round</h4>
+                        <p className="text-[11px] text-gray-400 mt-1 leading-relaxed">
+                          Coding tasks, system design, framework concepts, and syntax.
+                        </p>
+                      </div>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => setFormData({ ...formData, roundType: 'hr' })}
+                      className="flex flex-col items-center gap-3 p-5 rounded-2xl border border-gray-800 bg-gray-950/45 hover:bg-blue-500/5 hover:border-blue-500/35 transition cursor-pointer text-center group text-gray-150"
+                    >
+                      <div className="bg-blue-500/10 text-blue-400 p-3.5 rounded-xl border border-blue-500/20 group-hover:scale-105 transition-transform duration-200">
+                        <BsChatText size={24} />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-white text-sm">HR & Behavioral</h4>
+                        <p className="text-[11px] text-gray-400 mt-1 leading-relaxed">
+                          Situational scenarios, team collaboration, and culture fit.
+                        </p>
+                      </div>
+                    </button>
+                  </div>
+                </div>
               ) : (
                 <form onSubmit={handleCreateInterview} className="flex flex-col gap-5">
-                  <div>
-                    <h3 className="font-extrabold text-xl text-white">Configure Mock Interview</h3>
-                    <p className="text-xs text-gray-400 mt-0.5">
-                      Enter parameters to start your mock session (deducts 10 credits).
-                    </p>
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="font-extrabold text-xl text-white">
+                        Configure {formData.roundType === 'hr' ? 'HR Round' : 'Technical Round'}
+                      </h3>
+                      <p className="text-xs text-gray-400 mt-0.5">
+                        Configure settings to begin your mock session (deducts 10 credits).
+                      </p>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setFormData({ ...formData, roundType: '' })}
+                      className="text-xs font-bold text-emerald-400 hover:underline cursor-pointer border border-emerald-500/20 bg-emerald-500/5 px-2.5 py-1 rounded-lg"
+                    >
+                      ← Back
+                    </button>
                   </div>
 
                   {errorMsg && (
@@ -424,14 +487,20 @@ function Dashboard() {
                   </div>
 
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-xs font-bold text-gray-400">Skills / Job Description</label>
+                    <label className="text-xs font-bold text-gray-400">
+                      {formData.roundType === 'hr' ? 'Target Company & Culture Context' : 'Skills / Job Description'}
+                    </label>
                     <textarea
                       required
                       name="description"
                       value={formData.description}
                       onChange={handleInputChange}
                       rows="4"
-                      placeholder="Paste primary skills or job description details (e.g. Node.js, Express, React, MongoDB, RESTful APIs, JavaScript)..."
+                      placeholder={
+                        formData.roundType === 'hr'
+                          ? "Enter target company, values, or behavioral topics (e.g. Google, leadership, handling team conflicts, career goals)..."
+                          : "Paste primary skills or job description details (e.g. Node.js, Express, React, MongoDB, RESTful APIs, JavaScript)..."
+                      }
                       className="w-full px-4 py-2.5 bg-gray-950 border border-gray-800 rounded-xl text-sm focus:outline-none focus:border-emerald-500 text-white resize-none transition leading-relaxed"
                     />
                   </div>

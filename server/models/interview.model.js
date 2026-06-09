@@ -18,6 +18,11 @@ const interviewSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    roundType: {
+        type: String,
+        enum: ['technical', 'hr'],
+        default: 'technical'
+    },
     questionCount: {
         type: Number,
         default: 5
