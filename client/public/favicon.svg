@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#logoGrad)" />
+  <path d="M0 0 L32 0 L32 32 Z" fill="#ffffff" fill-opacity="0.08" />
+  <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="'Outfit', 'Inter', system-ui, -apple-system, sans-serif" font-weight="900" font-size="14" fill="#ffffff" letter-spacing="-0.5">AZ</text>
+</svg>
