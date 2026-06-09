@@ -419,7 +419,14 @@ function Dashboard() {
                 </div>
               ) : (
                 <form onSubmit={handleCreateInterview} className="flex flex-col gap-5">
-                  <div className="flex justify-between items-start">
+                  <div className="flex items-start gap-4 pr-8">
+                    <button
+                      type="button"
+                      onClick={() => setFormData({ ...formData, roundType: '' })}
+                      className="mt-1 text-xs font-bold text-emerald-400 hover:underline cursor-pointer border border-emerald-500/20 bg-emerald-500/5 px-2.5 py-1.5 rounded-lg shrink-0"
+                    >
+                      ← Back
+                    </button>
                     <div>
                       <h3 className="font-extrabold text-xl text-white">
                         Configure {formData.roundType === 'hr' ? 'HR Round' : 'Technical Round'}
@@ -428,13 +435,6 @@ function Dashboard() {
                         Configure settings to begin your mock session (deducts 10 credits).
                       </p>
                     </div>
-                    <button
-                      type="button"
-                      onClick={() => setFormData({ ...formData, roundType: '' })}
-                      className="text-xs font-bold text-emerald-400 hover:underline cursor-pointer border border-emerald-500/20 bg-emerald-500/5 px-2.5 py-1 rounded-lg"
-                    >
-                      ← Back
-                    </button>
                   </div>
 
                   {errorMsg && (
