@@ -138,7 +138,7 @@ function Dashboard() {
           </div>
           <button
             onClick={() => setShowModal(true)}
-            className="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-500 to-blue-500 hover:opacity-95 text-white font-bold px-6 py-3.5 rounded-2xl transition shadow-md shadow-emerald-500/10 cursor-pointer self-start md:self-auto shrink-0 text-sm"
+            className="flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-600 to-blue-600 hover:brightness-110 text-white font-extrabold px-6 py-3.5 rounded-2xl transition cursor-pointer self-start md:self-auto shrink-0 text-sm shadow-sm"
           >
             <BsPlusCircle size={16} />
             <span>New Mock Interview</span>
@@ -255,7 +255,7 @@ function Dashboard() {
               </p>
               <button
                 onClick={() => setShowModal(true)}
-                className="flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-blue-500 hover:opacity-95 text-white text-xs font-semibold px-6 py-3 rounded-xl transition cursor-pointer shadow-sm shadow-emerald-500/10"
+                className="flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-blue-600 hover:brightness-110 text-white text-xs font-extrabold px-6 py-3 rounded-xl transition cursor-pointer shadow-sm"
               >
                 <span>Start Practice</span>
                 <BsArrowRight size={14} />
