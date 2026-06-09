@@ -32,14 +32,14 @@ function Navbar() {
                 initial={{ opacity: 0, y: -40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4 }}
-                className="w-full max-w-6xl bg-gray-900/60 rounded-3xl shadow-lg border border-gray-800/80 px-6 py-4 flex justify-between items-center relative z-50 backdrop-blur-md"
+                className="w-full max-w-6xl bg-gray-900/60 rounded-3xl shadow-lg border border-gray-800/80 px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center relative z-50 backdrop-blur-md"
             >
                 {/* Logo Section */}
                 <Link to="/dashboard" className="flex items-center gap-3 cursor-pointer hover:opacity-85 transition">
                     <div className="bg-gradient-to-tr from-emerald-500 to-blue-500 text-white w-8 h-8 rounded-xl shadow-md shadow-emerald-500/10 flex items-center justify-center font-extrabold text-xs tracking-tight">
                         AZ
                     </div>
-                    <span className="font-extrabold text-lg tracking-tight bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">TalentForge.AI</span>
+                    <span className="font-extrabold text-lg tracking-tight bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent hidden sm:inline-block">TalentForge.AI</span>
                 </Link>
 
                 {/* Right Actions Section */}
@@ -56,7 +56,7 @@ function Navbar() {
                                     className="flex items-center gap-2 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 px-4 py-2 rounded-full text-sm font-semibold text-emerald-450 hover:text-emerald-400 transition cursor-pointer text-emerald-450"
                                 >
                                     <BsCoin size={15} className="text-emerald-400 animate-pulse" />
-                                    <span>{userData.credits} credits</span>
+                                    <span>{userData.credits}<span className="hidden sm:inline"> credits</span></span>
                                 </button>
 
                                 <AnimatePresence>

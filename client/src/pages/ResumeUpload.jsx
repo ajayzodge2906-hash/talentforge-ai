@@ -351,10 +351,10 @@ function ResumeUpload() {
                 </div>
 
                 {/* Tab Selector */}
-                <div className="flex border-b border-gray-800 gap-6">
+                <div className="flex border-b border-gray-800 gap-4 sm:gap-6 text-xs sm:text-sm">
                   <button
                     onClick={() => setActiveTab('profile')}
-                    className={`pb-3 text-sm font-bold transition cursor-pointer relative ${
+                    className={`pb-3 font-bold transition cursor-pointer relative ${
                       activeTab === 'profile' ? 'text-emerald-450' : 'text-gray-400 hover:text-gray-200'
                     }`}
                   >
@@ -365,7 +365,7 @@ function ResumeUpload() {
                   </button>
                   <button
                     onClick={() => setActiveTab('feedback')}
-                    className={`pb-3 text-sm font-bold transition cursor-pointer relative ${
+                    className={`pb-3 font-bold transition cursor-pointer relative ${
                       activeTab === 'feedback' ? 'text-emerald-450' : 'text-gray-400 hover:text-gray-200'
                     }`}
                   >

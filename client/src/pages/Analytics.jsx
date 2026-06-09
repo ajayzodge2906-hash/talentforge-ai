@@ -199,9 +199,9 @@ function Analytics() {
                 </h3>
                 <div className="w-full h-[300px] mt-2 flex items-center justify-center">
                   <ResponsiveContainer width="100%" height="100%">
-                    <RadarChart cx="50%" cy="50%" r="80%" data={radarData}>
+                    <RadarChart cx="50%" cy="50%" r="65%" data={radarData}>
                       <PolarGrid stroke="#334155" />
-                      <PolarAngleAxis dataKey="subject" tick={{ fill: '#94a3b8', fontSize: 11, fontWeight: '600' }} />
+                      <PolarAngleAxis dataKey="subject" tick={{ fill: '#94a3b8', fontSize: 10, fontWeight: '600' }} />
                       <PolarRadiusAxis angle={30} domain={[0, 10]} tick={{ fill: '#475569', fontSize: 9 }} />
                       <Radar name="Performance" dataKey="value" stroke="#10b981" fill="#10b981" fillOpacity={0.15} />
                       <Tooltip 

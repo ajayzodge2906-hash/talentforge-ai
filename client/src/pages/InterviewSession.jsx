@@ -582,7 +582,7 @@ function InterviewSession() {
                   {isListening && (
                     <div className="flex items-center gap-1.5 px-3">
                       <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-ping"></span>
-                      <span className="text-[10px] font-extrabold text-red-400 uppercase tracking-widest">Dictating</span>
+                      <span className="text-[10px] font-extrabold text-red-400 uppercase tracking-widest hidden sm:inline">Dictating</span>
                       {/* sound wave animation */}
                       <div className="flex items-end gap-0.5 h-3">
                         <span className="w-0.5 h-1 bg-red-400 rounded-full wave-bar"></span>

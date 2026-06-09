@@ -313,7 +313,7 @@ function Pricing() {
           ======================================================== */}
       <AnimatePresence>
         {mockModeActive && (
-          <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 px-4">
+          <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 px-4 py-6 overflow-y-auto">
             
             {/* 1. INITIAL SHIELD LOADER SCREEN */}
             {razorpayStep === 'loader' && (
@@ -321,7 +321,7 @@ function Pricing() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="bg-white rounded-3xl w-full max-w-2xl min-h-[420px] shadow-2xl flex flex-col items-center justify-center p-8 relative"
+                className="bg-white rounded-3xl w-full max-w-2xl min-h-[320px] sm:min-h-[420px] shadow-2xl flex flex-col items-center justify-center p-6 sm:p-8 relative"
               >
                 <div className="relative flex items-center justify-center">
                   <div className="w-24 h-24 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
@@ -367,7 +367,7 @@ function Pricing() {
                 </div>
 
                 {/* Right Side: Options Panel */}
-                <div className="w-full md:w-7/12 p-6 flex flex-col justify-between min-h-[380px]">
+                <div className="w-full md:w-7/12 p-6 flex flex-col justify-between min-h-[300px] sm:min-h-[380px]">
                   <div>
                     <div className="flex justify-between items-center pb-4 border-b border-gray-100">
                       <h3 className="font-bold text-sm text-gray-800">Payment Options</h3>
@@ -421,7 +421,7 @@ function Pricing() {
                 initial={{ opacity: 0, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
-                className="bg-white rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row text-gray-800 border border-gray-100 min-h-[380px]"
+                className="bg-white rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row text-gray-800 border border-gray-100 min-h-[300px] sm:min-h-[380px]"
               >
                 {/* Left Side (Same as option) */}
                 <div className="w-full md:w-5/12 bg-emerald-600 text-white p-6 flex flex-col justify-between relative">
@@ -441,7 +441,7 @@ function Pricing() {
                 </div>
 
                 {/* Right Side: OTP Input Simulation */}
-                <div className="w-full md:w-7/12 p-8 flex flex-col justify-between items-center text-center">
+                <div className="w-full md:w-7/12 p-6 sm:p-8 flex flex-col justify-between items-center text-center">
                   <div className="w-full flex flex-col items-center">
                     <div className="bg-emerald-50 border border-emerald-100 p-3.5 rounded-full text-emerald-600 mb-4 animate-pulse">
                       <BsShieldFillCheck size={28} />
@@ -485,7 +485,7 @@ function Pricing() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="bg-white rounded-3xl w-full max-w-2xl min-h-[420px] shadow-2xl overflow-hidden flex flex-col justify-between text-gray-800 border border-gray-200"
+                className="bg-white rounded-3xl w-full max-w-2xl min-h-[320px] sm:min-h-[420px] shadow-2xl overflow-hidden flex flex-col justify-between text-gray-800 border border-gray-200"
               >
                 {/* Bank Header Banner */}
                 <div className="bg-gray-50 border-b border-gray-150 p-6 flex items-center justify-between">
@@ -536,7 +536,7 @@ function Pricing() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="bg-emerald-600 rounded-3xl w-full max-w-lg min-h-[380px] shadow-2xl p-8 flex flex-col items-center justify-between text-white border border-emerald-500"
+                className="bg-emerald-600 rounded-3xl w-full max-w-lg min-h-[300px] sm:min-h-[380px] shadow-2xl p-6 sm:p-8 flex flex-col items-center justify-between text-white border border-emerald-500"
               >
                 {/* Dummy spacing */}
                 <div></div>

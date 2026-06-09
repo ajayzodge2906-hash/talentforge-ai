@@ -153,25 +153,25 @@ function Dashboard() {
           className="grid grid-cols-2 md:grid-cols-4 gap-4"
         >
           <div className="bg-gray-900/40 rounded-2xl p-5 border border-gray-800/80 shadow-xs flex flex-col">
-            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Available Credits</span>
-            <span className="text-2xl font-black text-white mt-2 flex items-center gap-2">
+            <span className="text-[9px] sm:text-[10px] font-bold text-gray-400 uppercase tracking-widest truncate">Available Credits</span>
+            <span className="text-xl sm:text-2xl font-black text-white mt-2 flex items-center gap-2">
               <BsCoin className="text-emerald-400" size={20} />
               <span>{userData.credits}</span>
             </span>
           </div>
           <div className="bg-gray-900/40 rounded-2xl p-5 border border-gray-800/80 shadow-xs flex flex-col">
-            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Completed Sessions</span>
-            <span className="text-2xl font-black text-white mt-2">{completedCount}</span>
+            <span className="text-[9px] sm:text-[10px] font-bold text-gray-400 uppercase tracking-widest truncate">Completed Sessions</span>
+            <span className="text-xl sm:text-2xl font-black text-white mt-2">{completedCount}</span>
           </div>
           <div className="bg-gray-900/40 rounded-2xl p-5 border border-gray-800/80 shadow-xs flex flex-col">
-            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Average Score</span>
-            <span className={`text-2xl font-black mt-2 ${avgScore >= 80 ? 'text-emerald-400' : avgScore >= 50 ? 'text-amber-400' : 'text-gray-200'}`}>
+            <span className="text-[9px] sm:text-[10px] font-bold text-gray-400 uppercase tracking-widest truncate">Average Score</span>
+            <span className={`text-xl sm:text-2xl font-black mt-2 ${avgScore >= 80 ? 'text-emerald-400' : avgScore >= 50 ? 'text-amber-400' : 'text-gray-200'}`}>
               {avgScore}%
             </span>
           </div>
           <div className="bg-gray-900/40 rounded-2xl p-5 border border-gray-800/80 shadow-xs flex flex-col">
-            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Subscription Tier</span>
-            <span className="text-lg font-extrabold text-emerald-400 mt-2 uppercase tracking-wide">
+            <span className="text-[9px] sm:text-[10px] font-bold text-gray-400 uppercase tracking-widest truncate">Subscription Tier</span>
+            <span className="text-base sm:text-lg font-extrabold text-emerald-400 mt-2 uppercase tracking-wide truncate">
               {userData.subscriptionPlan || 'free'}
             </span>
           </div>
@@ -333,12 +333,12 @@ function Dashboard() {
       {/* New Interview Modal */}
       <AnimatePresence>
         {showModal && (
-          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 px-4">
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 px-4 py-6 overflow-y-auto">
             <motion.div
               initial={{ opacity: 0, scale: 0.95, y: 15 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 15 }}
-              className="bg-gray-900 border border-gray-800 rounded-3xl w-full max-w-lg p-6 md:p-8 shadow-2xl relative text-gray-150"
+              className="bg-gray-900 border border-gray-800 rounded-3xl w-full max-w-lg p-5 sm:p-8 shadow-2xl relative text-gray-150 max-h-[90vh] overflow-y-auto"
             >
               {!generating && (
                 <button
@@ -393,7 +393,7 @@ function Dashboard() {
                     />
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-1.5">
                       <label className="text-xs font-bold text-gray-400">Years of Experience</label>
                       <input

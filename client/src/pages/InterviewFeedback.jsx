@@ -218,7 +218,7 @@ function InterviewFeedback() {
       <div className="w-full max-w-5xl mx-auto px-4 mt-8 flex-1 flex flex-col gap-6">
         
         {/* Navigation / Actions Header */}
-        <div className="flex justify-between items-center">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
           <button
             onClick={() => navigate('/dashboard')}
             className="flex items-center gap-2 bg-gray-900/60 hover:bg-gray-800/80 border border-gray-800 px-4 py-2 rounded-xl text-xs font-semibold text-gray-300 hover:text-white transition cursor-pointer backdrop-blur-md"
@@ -323,7 +323,7 @@ function InterviewFeedback() {
             <h3 className="font-extrabold text-white text-base">AI Preparation Roadmap</h3>
             
             {/* Strengths & Weaknesses */}
-            <div className="grid grid-cols-2 gap-4 text-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
               <div className="bg-emerald-500/5 border border-emerald-500/10 p-4 rounded-xl">
                 <span className="font-extrabold text-emerald-400 block flex items-center gap-1.5 mb-1.5">
                   <FaCheckCircle /> Strengths
