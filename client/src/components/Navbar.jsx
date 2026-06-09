@@ -77,7 +77,7 @@ function Navbar() {
                                                     setShowCreditPopup(false);
                                                     navigate('/pricing');
                                                 }}
-                                                className="w-full bg-gradient-to-r from-emerald-500 to-blue-500 hover:opacity-95 text-white py-2.5 rounded-xl text-xs font-bold transition cursor-pointer shadow-sm shadow-emerald-500/10"
+                                                className="w-full bg-gray-950/60 hover:bg-emerald-500/10 border border-emerald-500/30 hover:border-emerald-500/50 text-emerald-400 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer shadow-xs backdrop-blur-md"
                                             >
                                                 Buy More Credits
                                             </button>
