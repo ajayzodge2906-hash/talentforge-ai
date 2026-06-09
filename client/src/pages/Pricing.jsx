@@ -240,9 +240,9 @@ function Pricing() {
 
               <button
                 onClick={() => handlePurchase(plan.name, plan.dbPlan, plan.price, plan.credits)}
-                className={`w-full flex items-center justify-center gap-2 py-3.5 rounded-2xl text-xs font-extrabold cursor-pointer transition shadow-sm ${
+                className={`w-full flex items-center justify-center gap-2 py-3.5 rounded-2xl text-xs font-bold cursor-pointer transition shadow-xs backdrop-blur-md ${
                   plan.popular
-                    ? 'bg-gradient-to-r from-emerald-600 to-blue-600 hover:brightness-110 text-white'
+                    ? 'bg-gray-950/60 hover:bg-emerald-500/10 border border-emerald-500/30 hover:border-emerald-500/50 text-emerald-400'
                     : 'bg-gray-850 hover:bg-gray-800 border border-gray-800 text-gray-300 bg-transparent'
                 }`}
               >

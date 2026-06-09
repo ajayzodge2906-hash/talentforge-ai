@@ -229,7 +229,7 @@ function InterviewFeedback() {
           
           <button
             onClick={generateReportPDF}
-            className="flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-blue-600 hover:brightness-110 text-white text-xs font-extrabold px-5 py-3 rounded-xl transition cursor-pointer shadow-sm"
+            className="flex items-center gap-2 bg-gray-950/60 hover:bg-emerald-500/10 border border-emerald-500/30 hover:border-emerald-500/50 text-emerald-400 text-xs font-bold px-5 py-3 rounded-xl transition cursor-pointer shadow-xs backdrop-blur-md"
           >
             <BsFilePdf size={14} />
             <span>Download PDF Report</span>
