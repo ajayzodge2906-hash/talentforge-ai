@@ -178,9 +178,9 @@ function Pricing() {
         <div className="flex justify-between items-center w-full">
           <button
             onClick={() => navigate('/dashboard')}
-            className="flex items-center gap-2 text-gray-400 hover:text-white text-sm font-semibold transition cursor-pointer"
+            className="flex items-center gap-2 bg-gray-900/60 hover:bg-gray-800/80 border border-gray-800 px-4 py-2 rounded-xl text-xs font-semibold text-gray-300 hover:text-white transition cursor-pointer backdrop-blur-md"
           >
-            <BsArrowLeft size={16} />
+            <BsArrowLeft size={14} className="text-gray-405" />
             <span>Back to Dashboard</span>
           </button>
         </div>
